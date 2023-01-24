@@ -71,7 +71,7 @@ List<string> EnterArray(string info, string action)
                 if (string.IsNullOrEmpty(text))
                 {
                     Color(5);
-                    Console.WriteLine("элемент массива не задан (нажата клавиша <Enter>) - повторите ввод.");
+                    Console.WriteLine("элемент массива не задан (нажата клавиша <Enter>) - повторите ввод");
                     Color(0);
                     break;
                 }
@@ -109,17 +109,20 @@ List<string> SortArray(List<string> Array)
 void PrintArray1D(List<string> Array, string text)
 {
     Color(1);
-    if (Array.Count != 0) Console.WriteLine($"\n {text} сформирован текстовый массив из {Array.Count} элементов :\n");
-    else Console.WriteLine($"\n {text} массив не сформирован - элементы отсутствуют.");
-
-    for (int i = 0; i < Array.Count; i++)
+    if (Array.Count != 0)
     {
-        var ar = String.Format("{0,2}", Array[i]);
-        Color(1);
-        Console.Write(ar);
-        Color(4);
-        if (i < Array.Count - 1) Console.Write(" | ");
+        Console.WriteLine($"\n {text} сформирован текстовый массив из {Array.Count} элементов :\n");
+
+        for (int i = 0; i < Array.Count; i++)
+        {
+            var ar = String.Format("{0,2}", Array[i]);
+            Color(1);
+            Console.Write(ar);
+            Color(4);
+            if (i < Array.Count - 1) Console.Write(" | ");
+        }
     }
+    else Console.WriteLine($"\n {text} массив не сформирован - элементы отсутствуют.");
     Color(0);
     Console.WriteLine();
 }
