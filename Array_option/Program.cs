@@ -101,7 +101,7 @@ string[] ArCopy(string[] array, int Length)
 
 string[] EnterArray(string info, string action)
 {
-    int Len = CheckSize("Задайте предполагаемое количество элементов массива : ");
+    int Len = CheckSize("Задайте предполагаемое количество элементов массива (если не определились - по принципу - чем больше, тем лучше) : ");
     Color(1);
     Console.Write(info);
     Color(2);
@@ -209,7 +209,7 @@ void PrintArray1D(string[] array, string text)
 
 Console.Clear();
 
-string[] Arr = EnterArray("Задайте одномерный массив из строк (набора символов) - для окончании ввода наберите кодовое слово ",
+string[] Arr = EnterArray("Задайте одномерный массив из строк (набора символов) - а если утомитесь - наберите спасительный код ",
                           "По запросу наберите текст (символы) и подтвердите ввод клавишей <Enter>.");
 
 if (Arr.Length != 0)

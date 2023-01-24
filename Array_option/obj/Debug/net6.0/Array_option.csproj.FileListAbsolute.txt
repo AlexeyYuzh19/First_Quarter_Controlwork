@@ -1,0 +1,15 @@
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\bin\Debug\net6.0\Array_option.exe
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\bin\Debug\net6.0\Array_option.deps.json
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\bin\Debug\net6.0\Array_option.runtimeconfig.json
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\bin\Debug\net6.0\Array_option.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\bin\Debug\net6.0\Array_option.pdb
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.AssemblyInfo.cs
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\refint\Array_option.dll
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.pdb
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\Array_option.genruntimeconfig.cache
+C:\Users\1\Desktop\Обучение ИТ\Введение в программирование C#\First_Quarter_Controlwork\Array_option\obj\Debug\net6.0\ref\Array_option.dll
