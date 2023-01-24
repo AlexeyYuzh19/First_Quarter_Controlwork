@@ -100,7 +100,7 @@ List<string> SortArray(List<string> Array)
 
     foreach (string res in Array)
     {
-        if (res.Length <= 3 && res != "[Ent]" && res != "[-]") ResArray.Add(res);
+        if (res.Length <= 3) ResArray.Add(res);
     }
 
     return ResArray;
