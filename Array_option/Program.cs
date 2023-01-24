@@ -8,9 +8,9 @@
 ["Russia", "Iran", "Cuba"] -> [].
 */
 
-// Вариант 2 кода - с применением и обработкой массивов
+//  Вариант 2 кода - с применением и обработкой массивов
 
-// М Е Т О Д Ы
+//  М Е Т О Д Ы
 
 void Color(int color)
 {
@@ -96,6 +96,7 @@ string[] ArCopy(string[] array, int Length)
     {
         Copy[i] = array[i];
     }
+
     return Copy;
 }
 
@@ -152,6 +153,7 @@ string[] EnterArray(string info, string action)
 
     string[] EnArray = ArCopy(EnArr, pos);
     Color(0);
+
     return EnArray;
 }
 
@@ -205,7 +207,7 @@ void PrintArray1D(string[] array, string text)
     Console.WriteLine();
 }
 
-// К О Д   
+//  К О Д   
 
 Console.Clear();
 
