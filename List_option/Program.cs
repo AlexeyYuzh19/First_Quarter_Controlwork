@@ -34,6 +34,9 @@ void Color(int color)
         case 6:
             Console.ForegroundColor = ConsoleColor.Blue;
             break;
+        case 7:
+            Console.ForegroundColor = ConsoleColor.Black;
+            break;
         default:
             Console.ResetColor();
             break;
@@ -116,8 +119,16 @@ void PrintArray1D(List<string> Array, string text)
         for (int i = 0; i < Array.Count; i++)
         {
             var ar = String.Format("{0,2}", Array[i]);
-            Color(1);
-            Console.Write(ar);
+            if (string.IsNullOrWhiteSpace(ar))
+            {
+                Color(7);
+                foreach (char f in ar) Console.Write("_");
+            }
+            else
+            {
+                Color(1);
+                Console.Write(ar);
+            }
             Color(4);
             if (i < Array.Count - 1) Console.Write(" | ");
         }
