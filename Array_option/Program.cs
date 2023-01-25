@@ -61,6 +61,7 @@ int CheckInputNumber(string Text)
         Color(0);
     }
     Color(0);
+
     return number;
 }
 
@@ -87,17 +88,6 @@ int CheckSize(string text)
     }
 
     return size;
-}
-
-string[] ArCopy(string[] array, int Length)
-{
-    string[] Copy = new string[Length];
-    for (int i = 0; i < Length; i++)
-    {
-        Copy[i] = array[i];
-    }
-
-    return Copy;
 }
 
 string[] EnterArray(string info, string action)
@@ -151,9 +141,9 @@ string[] EnterArray(string info, string action)
     }
     while (text != "stop" && pos < Len);
 
-    string[] EnArray = ArCopy(EnArr, pos);
+    string[] EnArray = EnArr[0..pos];
     Color(0);
-
+    
     return EnArray;
 }
 
