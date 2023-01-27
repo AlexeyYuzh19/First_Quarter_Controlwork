@@ -52,7 +52,7 @@ List<string> EnterArray(string info, string action)
     Color(1);
     Console.WriteLine(action);
 
-    List<string> EnArray = new List<string>();
+    List<string> enArray = new List<string>();
     string text;
     int pos = 1;
 
@@ -62,7 +62,7 @@ List<string> EnterArray(string info, string action)
         {
             Color(3);
             Console.Write($"элемент {pos}: ");
-            text = Console.ReadLine();
+            text = Convert.ToString(Console.ReadLine());
 
             if (text == "stop")
             {
@@ -84,8 +84,9 @@ List<string> EnterArray(string info, string action)
                     Console.WriteLine("введена пустая строка подтведите ввод нажатием клавиши <Enter>, для отмены нажмите любую клавишу");
                     Color(0);
                     if (Console.ReadKey(true).Key != ConsoleKey.Enter) break;
+                    if (text == " ") text = "_";
                 }
-                EnArray.Add(text);
+                enArray.Add(text);
                 pos++;
                 break;
             }
@@ -94,31 +95,33 @@ List<string> EnterArray(string info, string action)
     while (text != "stop");
 
     Color(0);
-    return EnArray;
+    return enArray;
 }
 
-List<string> SortArray(List<string> Array)
+List<string> SortArray(List<string> array)
 {
-    List<string> ResArray = new List<string>();
+    List<string> resArray = new List<string>();
 
-    foreach (string res in Array)
+    const int sortLength = 3;
+
+    foreach (string res in array)
     {
-        if (res.Length <= 3) ResArray.Add(res);
+        if (res.Length <= sortLength) resArray.Add(res);
     }
 
-    return ResArray;
+    return resArray;
 }
 
-void PrintArray1D(List<string> Array, string text)
+void PrintArray1D(List<string> array, string comment)
 {
     Color(1);
-    if (Array.Count != 0)
+    if (array.Count != 0)
     {
-        Console.WriteLine($"\n {text} сформирован текстовый массив из {Array.Count} элементов :\n");
+        Console.WriteLine($"\n {comment} сформирован текстовый массив из {array.Count} элементов :\n");
 
-        for (int i = 0; i < Array.Count; i++)
+        for (int i = 0; i < array.Count; i++)
         {
-            var ar = String.Format("{0,2}", Array[i]);
+            var ar = String.Format("{0,2}", array[i]);
             if (string.IsNullOrWhiteSpace(ar))
             {
                 Color(7);
@@ -130,10 +133,10 @@ void PrintArray1D(List<string> Array, string text)
                 Console.Write(ar);
             }
             Color(4);
-            if (i < Array.Count - 1) Console.Write(" | ");
+            if (i < array.Count - 1) Console.Write(" | ");
         }
     }
-    else Console.WriteLine($"\n {text} массив не сформирован - элементы отсутствуют.");
+    else Console.WriteLine($"\n {comment} массив не сформирован - элементы отсутствуют.");
     Color(0);
     Console.WriteLine();
 }
@@ -142,14 +145,14 @@ void PrintArray1D(List<string> Array, string text)
 
 Console.Clear();
 
-List<string> Arr = EnterArray("Задайте одномерный массив из строк (набора символов) - для окончании ввода наберите кодовое слово ",
+List<string> array = EnterArray("Задайте одномерный массив из строк (набора символов) - для окончании ввода наберите кодовое слово ",
                           "По запросу наберите текст (символы) и подтвердите ввод клавишей <Enter>.");
 
-if (Arr.Count != 0)
+if (array.Count != 0)
 {
-    PrintArray1D(Arr, "Итого");
-    List<string> ResArr = SortArray(Arr);
-    PrintArray1D(ResArr, "По критерию количество символов в элементе не более трех");
+    PrintArray1D(array, "Итого");
+    List<string> resArray = SortArray(array);
+    PrintArray1D(resArray, "По критерию количество символов в элементе не более трех");
 }
 else
 {
