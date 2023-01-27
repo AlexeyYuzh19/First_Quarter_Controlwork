@@ -43,7 +43,7 @@ void Color(int color)
     }
 }
 
-int CheckInputNumber(string Text)
+int CheckInputNumber(string comment)
 {
     int number;
     string text;
@@ -51,7 +51,7 @@ int CheckInputNumber(string Text)
     while (true)
     {
         Color(1);
-        Console.Write(Text);
+        Console.Write(comment);
         text = Console.ReadLine();
 
         if (int.TryParse(text, out number)) break;
@@ -65,12 +65,12 @@ int CheckInputNumber(string Text)
     return number;
 }
 
-int CheckSize(string text)
+int CheckSize(string comment)
 {
     int size;
     while (true)
     {
-        size = CheckInputNumber(text);
+        size = CheckInputNumber(comment);
 
         if (size < 0)
         {
@@ -92,7 +92,7 @@ int CheckSize(string text)
 
 string[] EnterArray(string info, string action)
 {
-    int Len = CheckSize("Задайте предполагаемое количество элементов массива (если не определились - по принципу - чем больше, тем лучше) : ");
+    int len = CheckSize("Задайте предполагаемое количество элементов массива (если не определились - по принципу - чем больше, тем лучше) : ");
     Color(1);
     Console.Write(info);
     Color(2);
@@ -100,7 +100,7 @@ string[] EnterArray(string info, string action)
     Color(1);
     Console.WriteLine(action);
 
-    string[] EnArr = new string[Len];
+    string[] enArr = new string[len];
     string text;
     int pos = 0;
 
@@ -132,50 +132,51 @@ string[] EnterArray(string info, string action)
                     Console.WriteLine("введена пустая строка подтведите ввод нажатием клавиши <Enter>, для отмены нажмите любую клавишу");
                     Color(0);
                     if (Console.ReadKey(true).Key != ConsoleKey.Enter) break;
+                    if (text == " ") text = "_";
                 }
-                EnArr[pos] = text;
+                enArr[pos] = text;
                 pos++;
                 break;
             }
         }
     }
-    while (text != "stop" && pos < Len);
+    while (text != "stop" && pos < len);
 
-    string[] EnArray = EnArr[0..pos];
+    string[] enArray = enArr[0..pos];
     Color(0);
-    
-    return EnArray;
+
+    return enArray;
 }
 
-string[] SortArray(string[] Array)
+string[] SortArray(string[] array, int sortLength)
 {
-    int count = 1;
+    int count = 0;
 
-    foreach (string res in Array)
+    foreach (string res in array)
     {
-        if (res.Length <= 3) count++;
+        if (res.Length <= sortLength) count++;
     }
 
-    string[] ResArray = new string[count - 1];
+    string[] resArray = new string[count];
     int index = 0;
 
-    foreach (string res in Array)
+    foreach (string res in array)
     {
-        if (res.Length <= 3)
+        if (res.Length <= sortLength)
         {
-            ResArray[index] = res;
+            resArray[index] = res;
             index++;
         }
     }
 
-    return ResArray;
+    return resArray;
 }
 
-void PrintArray1D(string[] array, string text)
+void PrintArray1D(string[] array, string comment)
 {
     Color(1);
-    if (array.Length != 0) Console.WriteLine($"\n {text} сформирован текстовый массив из {array.Length} элементов :\n");
-    else Console.WriteLine($"\n {text} массив не сформирован - элементы отсутствуют.\n");
+    if (array.Length != 0) Console.WriteLine($"\n {comment} сформирован текстовый массив из {array.Length} элементов :\n");
+    else Console.WriteLine($"\n {comment} массив не сформирован - элементы отсутствуют.\n");
 
     for (int i = 0; i < array.Length; i++)
     {
@@ -201,14 +202,15 @@ void PrintArray1D(string[] array, string text)
 
 Console.Clear();
 
-string[] Arr = EnterArray("Задайте одномерный массив из строк (набора символов) - а если утомитесь - наберите спасительный код ",
+string[] array = EnterArray("Задайте одномерный массив из строк (набора символов) - а если утомитесь - наберите спасительный код ",
                           "По запросу наберите текст (символы) и подтвердите ввод клавишей <Enter>.");
 
-if (Arr.Length != 0)
+if (array.Length != 0)
 {
-    PrintArray1D(Arr, "Итого");
-    string[] ResArr = SortArray(Arr);
-    PrintArray1D(ResArr, "По критерию количество символов в элементе не более трех");
+    PrintArray1D(array, "Итого");
+    int sortLen = CheckSize("\nЗадайте количество символов в строке для выборки из массива элементов с длиной меньше или равно заданному значению : ");
+    string[] resArray = SortArray(array, sortLen);
+    PrintArray1D(resArray, "По заданному количеству символов в элементе");
 }
 else
 {
